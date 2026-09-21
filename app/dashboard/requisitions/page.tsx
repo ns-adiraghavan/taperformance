@@ -35,12 +35,12 @@ export default function RequisitionsPage() {
 
   const reqs = snap.requisitions;
 
-  const statuses = useMemo(() => [...new Set(reqs.map(r => r.status))].sort(), [reqs]);
-  const divisions = useMemo(() => [...new Set(reqs.map(r => r.division).filter(Boolean))].sort(), [reqs]);
+  const statuses = useMemo(() => Array.from(new Set(reqs.map(r => r.status))).sort(), [reqs]);
+  const divisions = useMemo(() => Array.from(new Set(reqs.map(r => r.division).filter(Boolean))).sort(), [reqs]);
   const tas = useMemo(() => {
     const set = new Set<string>();
     reqs.forEach(r => r.taMembers.forEach(t => set.add(t)));
-    return [...set].sort();
+    return Array.from(set).sort();
   }, [reqs]);
 
   const filtered = useMemo(() => {
