@@ -109,7 +109,6 @@ export default function TopBar({ title, subtitle, actions }: Props) {
           background:'#0F4C81', display:'flex', alignItems:'center', justifyContent:'center',
           color:'white', fontSize:13, fontWeight:700, flexShrink:0,
           cursor:'default',
-          title: session?.name,
         }}
         title={session?.name}
         >
